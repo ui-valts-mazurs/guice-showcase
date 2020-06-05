@@ -1,0 +1,31 @@
+plugins {
+    id 'application'
+}
+
+group 'com.ui.showcase.guice'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'com.ui.showcase.guice.Main'
+}
+
+compileJava {
+    sourceCompatibility '1.8'
+}
+
+dependencies {
+    compile 'com.google.inject:guice:4.2.3'
+
+    def immutablesVersion = '2.8.2'
+    annotationProcessor "org.immutables:value:$immutablesVersion"
+    compileOnly "org.immutables:value-annotations:$immutablesVersion"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+apply from: 'jar.gradle'
+apply from: 'obfuscation.gradle'
