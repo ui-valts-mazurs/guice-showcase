@@ -1,6 +1,5 @@
 # guice-showcase
 Guice showcase with YGuard obfuscation.
-Head to 
 
 ## How to run
 ### Unobfiscated
